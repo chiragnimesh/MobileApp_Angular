@@ -1,0 +1,20 @@
+<section class="scroll-section-container">
+  <div class="sticky-left" #stickyLeft>
+    <h2>Why Choose Us?</h2>
+    <p class="para">We bring you the latest and greatest in mobile technology.</p>
+  </div>
+
+  <div class="scrollable-right" #cardContainer>
+<div class="card" *ngFor="let card of cards">
+    <div
+        class="carousel-card"
+        appTilt
+      >
+        <img [src]="card.image" />
+        <h3>{{ card.title }}</h3>
+      <p>{{ card.description }}</p>
+      </div>
+      </div>
+  </div>
+</section>
+

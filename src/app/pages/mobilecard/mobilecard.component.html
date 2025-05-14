@@ -1,0 +1,80 @@
+<div class="table-container">
+  @if (loading) {
+  <div class="spinner-container">
+    <div class="spinner"></div>
+    <span>Loading data...</span>
+  </div>
+  } @else if (errorMessage && errorMessage !== 'No mobile data available.') {
+  <div class="error-container">
+    <div class="error-icon">⚠️</div>
+    <div class="error-text">{{ errorMessage }}</div>
+  </div>
+  } @else if (errorMessage === 'No mobile data available.') {
+  <div class="info-container">
+    <div class="info-icon">📭</div>
+    <div class="info-text">No data available.</div>
+  </div>
+  } @else{
+  <section class="carousel-container">
+    @if(showHeading){
+      <app-mobilecarousel></app-mobilecarousel>
+    <section class="carousel-container">
+      <div class="carousel-container-div">
+        <div class="heading">
+          Check out the hottest mobile devices that everyone is talking about!
+        </div>
+        <div class="carousel-wrapper">
+          <div class="carousel" #carousel>
+            <div
+              class="carousel-item"
+              *ngFor="let img of images; let i = index"
+              [class.active]="i === currentIndex"
+            >
+              <img [src]="img" alt="Carousel Image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="fancy-marquee">
+      <div class="line"></div>
+      <div class="scroll-wrapper">
+        <div class="scroll-text">
+          🚀 Welcome to the Mega Mobile Carnival! 🎉 Grab the latest
+          smartphones, jaw-dropping discounts, flash deals, surprise gifts, and
+          unbeatable prices! 🔥📱 Don't miss your chance to upgrade now!
+        </div>
+      </div>
+      <div class="line"></div>
+    </div>
+
+    }
+
+    <div class="carousel-track">
+      @for (phone of mobiles(); track phone.mobileName) {
+      <div
+        class="carousel-card"
+        appTilt
+        [tiltOptions]="{ max: 20, speed: 300, glare: true, 'max-glare': 0.9 }"
+      >
+        <img [src]="phone.image" alt="{{ phone.mobileName }}" />
+        <h4 class="mb-4">{{ phone.mobileName }}</h4>
+        <p>
+          Ram: {{ phone.ram }} GB<br />
+          ExternalStorage: {{ phone.externalStorage }} GB<br />
+          💰 {{ phone.price | currency : "INR" : "symbol" : "1.0-0" }}
+        </p>
+        <p></p>
+        <div class="card-actions">
+          <button class="buy-button" (click)="openAmazonLink()">
+            <i class="bi bi-arrow-right"></i>
+            Buy Now</button>
+        </div>
+      </div>
+      }
+    </div>
+    <app-test></app-test>
+    <app-map></app-map>
+  </section>
+  }
+</div>

@@ -1,0 +1,21 @@
+<section>
+  <img src="imgs/Redmi Note 13-2.png" />
+  <!-- <div class="test">
+    <app-test></app-test>
+  </div> -->
+  <div class="main_content">
+    <h1>Your Mobile Adventure Awaits</h1>
+    <h5 class="mt-2">{{ displayedText }}<span class="cursor">|</span></h5>
+    <!-- <a class="btn btn-lg btn-primary mt-2" routerLink="/mobiles">Mobile</a> -->
+     <br>
+   <a class="gradient-button" routerLink="/mobilecard">Mobiles</a>
+
+  </div>
+</section>
+<section class="courses">
+  <div class="container">
+    <h2 class="text-center animate-on-scroll">🔥 Trending Mobile Devices</h2>
+
+    <app-mobilecard [showHeading]="false"></app-mobilecard>
+  </div>
+</section>

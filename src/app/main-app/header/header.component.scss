@@ -1,0 +1,34 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(136, 136, 136, 0.3); /* Semi-transparent white background */
+  backdrop-filter: blur(8px); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+}
+
+.nav-link {
+  color: white !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-text {
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.nav-link:hover .nav-icon {
+  transform: scale(1.3);
+}
+
+.nav-link:hover .nav-text {
+  color: #388be4; /* Highlight text in warning color */
+}

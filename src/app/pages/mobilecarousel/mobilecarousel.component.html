@@ -1,0 +1,22 @@
+<!-- pop up slides -->
+<div class="carousel-container" (mouseenter)="pause()" (mouseleave)="resume()">
+  <div class="carousel-track">
+    <div
+      class="carousel-slide"
+      *ngFor="let image of visibleSlides; let i = index"
+      [ngClass]="getSlideClass(i)"
+    >
+      <img [src]="image.url" alt="Slide" />
+
+      <div class="image-overlay" *ngIf="getSlideClass(i).includes('center')">
+        0{{image.index}}
+      </div>
+      <div class="image-text" *ngIf="getSlideClass(i).includes('center')">
+        <h1>{{ image.h1 }}</h1>
+        <p>{{ image.p }}</p>
+      </div>
+      <button *ngIf="getSlideClass(i) === 'prev'" class="nav-button prev-button" (click)="prevSlide()">&#10094;</button>
+      <button *ngIf="getSlideClass(i) === 'next'" class="nav-button next-button" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</div>

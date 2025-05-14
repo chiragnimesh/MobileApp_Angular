@@ -3,6 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+     "jsx": "react-jsx",                      // 👈 Important: Enables JSX suppor  // 👈 Allows imports like `import React from 'react'`              // 👈 Smooth interop with CommonJS
+    // "module": "esnext",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -13,10 +15,13 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "importHelpers": true,
+    // "target": "es6",
+     "lib": ["dom", "esnext"],
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

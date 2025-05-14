@@ -1,0 +1,36 @@
+.parent-container {
+  padding: 3rem; /* Apply the spacing to the parent */
+  display: flex; /* Enable flexbox for layout */
+  flex-direction: row; /* Arrange items in a row (default) */
+  justify-content: space-between; /* Distribute space between map and text */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.map {
+  height: 500px;
+  width: 60%; /* Takes up 50% of the parent width */
+  border-radius: 2rem; /* Add border radius */
+  background-color: #000000; /* Add background color */
+  overflow: hidden; /* Prevent iframe corners from showing outside border-radius */
+  margin-right: 2rem; /* Add some spacing between map and text */
+}
+
+.map iframe {
+  display: block; /* Prevent potential extra spacing */
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.parent-container p {
+  margin-top: 2rem;
+  font-size: 3rem;
+  text-align: center;
+  flex-grow: 1; /* Allow paragraph to take up available space */
+  //    flex: 0 0 60%; /* Don't grow, don't shrink, take up 50% width */
+  position: sticky;
+  top: 15rem;
+  align-self: flex-start;
+  color: #f0f0f0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

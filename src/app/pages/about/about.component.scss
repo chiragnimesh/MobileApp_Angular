@@ -1,0 +1,70 @@
+.about {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  background-color: #000000;
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #f9f9f9;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+
+  .team {
+    margin-top: 5rem;
+
+    h3 {
+      color: #f9f9f9;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 5rem 5rem; // Increased spacing (Row: 3rem, Column: 3rem)
+      flex-wrap: wrap;
+    }
+
+    .member {
+      background: rgb(46, 46, 46);
+      padding: 2rem; // Slightly more padding for a better look
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #6d6d6d;
+      }
+
+      p {
+        color: #aaaaaa;
+        font-size: 1rem;
+      }
+    }
+  }
+}

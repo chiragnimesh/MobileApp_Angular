@@ -1,0 +1,116 @@
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  // height: 100vh;
+  background-color: rgb(0, 0, 0);
+  max-width: 100%; /* Make image responsive */
+  height: auto;
+  display: block; /* Remove extra space below inline elements */
+  margin: 0 auto 1rem;
+}
+.main_content {
+  position: absolute;
+  top: 40%;
+  left: 74%;
+  transform: translate(-50%, -50%);
+  h1 {
+    text-align: left;
+    font-size: 4rem;
+    font-family: "YourDesiredFont-Bold", sans-serif; /* Replace with your font */
+    color: #fff; /* White or light color for heading */
+    margin-bottom: 2rem;
+  }
+  h5 {
+    // margin-top: 30rem;
+    text-align: left;
+    font-family: "YourDesiredFont-Bold", sans-serif; /* Replace with your font */
+    font-size: 1.5rem; /* Adjust size */
+    color: #ddd; /* White or light color for heading */
+    margin-bottom: 0.5rem;
+  }
+}
+
+//Css for typing animation
+.cursor {
+  animation: blink 1s infinite;
+  color: #fff;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.courses {
+  background-color: #000000;
+  // padding: 6vh;
+}
+
+//Slides "All course" text downwards
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-on-scroll {
+  color: #fefefe;
+  opacity: 0; // Initially hidden
+  transform: translateY(70px); // Start position
+  transition: opacity 3s ease-out, transform 3s ease-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section img {
+  width: 100%;
+  display: block;
+  /* Smooth blend to white */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+section img {
+  box-shadow: 0px 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-button {
+  background: linear-gradient(45deg, #6eff99, #5a55ff);
+  text-decoration: none;
+  color: rgb(244, 244, 244);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(120, 115, 245, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-button:hover {
+  box-shadow: 0 6px 30px rgba(15, 111, 144, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Global styles for black theme (applied to body or a main container) */
+body.black-theme {
+  background-color: #000;
+  color: #f0f0f0; /* Light text color */
+}
+
+/* Styling the first section with the image and main content */
+section:first-of-type {
+  position: relative;
+  background-color: #000; /* Ensure the section itself has a black background */
+  padding: 2rem; /* Adjust padding as needed */
+  text-align: center; /* Center the content */
+}

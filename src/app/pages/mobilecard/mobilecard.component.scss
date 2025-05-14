@@ -1,0 +1,316 @@
+.table-container{
+  background-color: #000000;
+   min-height: 50vh;
+    // margin: 0;
+}
+.carousel-container {
+  // margin: 40px 0 0;
+  // margin-top: 5rem;
+  padding:20px;
+  // padding-top: 60px;
+
+
+.carousel-container {
+  padding: 2rem;
+
+  .carousel-container-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+   
+
+    .heading {
+      width: 35rem;
+      background: #675348;
+      border-radius: 12px;
+      padding: 40px;
+      color: #d3d3d3;
+      font-family: 'YourDesiredFont-Bold', cursive;
+      font-size: 2rem;
+      box-shadow: 0 8px 20px rgba(199, 139, 101, 0.512);
+  
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 50%;
+      max-width: 600px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(199, 139, 101, 0.512);
+
+      .carousel {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+
+        .carousel-item {
+          min-width: 100%;
+          opacity: 0;
+          transition: opacity 0.6s ease;
+          img {
+            width: 100%;
+            height: 50vh;
+            border-radius: 1rem;
+            object-fit: cover;
+          }
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+
+        &.prev {
+          left: 10px;
+        }
+        &.next {
+          right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+  h4{
+    font-family: 'YourDesiredFont-Bold', sans-serif;
+  }
+
+  .carousel-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding-bottom: 10px;
+    padding-top: 100px;
+  }
+
+  @keyframes appear {
+    from{
+      opacity: 0;
+      transform: translate(-100px);
+      // clip-path: insert(100% 100% 0 0);
+    } to{
+      opacity: 1;
+      transform: translate(0px);
+      // clip-path: insert(0 0 0 0);
+    }
+  }
+    
+
+
+  .carousel-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+    background: #000000;
+    // border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry  0% cover 40%;
+
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    h4{
+      color: #cce0ff;
+    }
+    p{
+      color: #cce0ff;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.carousel-card .card-actions {
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.carousel-card .buy-button {
+  background: linear-gradient(45deg, #959595, #444444); /* Example gradient */
+  color: rgb(237, 237, 237);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  // font-family: Arial, Helvetica, sans-serif;
+}
+
+.carousel-card .buy-button:hover {
+  background: linear-gradient(45deg, #2a2a2a, #0f0f0f);
+}
+
+// ----------------------------------------------------Scrolling SCSS----------------------------------------------
+.fancy-marquee {
+  margin-top: 2rem;
+  background-color: #000;
+  color: rgb(212, 212, 212);
+  font-size: 1.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.fancy-marquee .line {
+  height: 2px;
+  background-color: #a89a90;
+  width: 100%;
+}
+
+.scroll-wrapper {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  margin: 1rem 0;
+}
+
+.scroll-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: move-left 20s linear infinite;
+  transition: animation-duration 0.3s ease-in-out;
+}
+
+.scroll-wrapper:hover .scroll-text {
+  animation-duration: 40s;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+//----------------------------------------Loading spinned CSS----------------------------------------
+.spinner-container {
+  // background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  color: #0053ab;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #cce0ff;
+  border-top: 4px solid #0053ab;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container {
+  // height: 100vh;
+  // background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  color: #d93025;
+  font-size: 18px;
+  font-weight: 500;
+  animation: bounce 1s ease infinite;
+}
+
+.error-icon {
+  font-size: 36px;
+}
+
+.error-text {
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.info-container {
+  // background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  animation: float 1.8s ease-in-out infinite;
+}
+
+.info-icon {
+  font-size: 36px;
+}
+
+.info-text {
+  text-align: center;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}

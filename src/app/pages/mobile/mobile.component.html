@@ -1,0 +1,77 @@
+<div class="table-container">
+  @if (loading) {
+  <div class="spinner-container">
+    <div class="spinner"></div>
+    <span>Loading data...</span>
+  </div>
+  } @else if (errorMessage && errorMessage !== 'No mobile data available.') {
+  <div class="error-container">
+    <div class="error-icon">⚠️</div>
+    <div class="error-text">{{ errorMessage }}</div>
+  </div>
+  } @else if (errorMessage === 'No mobile data available.') {
+  <div class="info-container">
+    <div class="info-icon">📭</div>
+    <div class="info-text">No data available.</div>
+    <button class="btn btn-primary" routerLink="/admin">Add Mobile</button>
+  </div>
+  } @else {
+  <h2 class="table-heading">Mobile Data</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Mobile Name</th>
+        <th>Brand</th>
+        <th>RAM</th>
+        <th>Price</th>
+        <th>External Storage</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (mobile of mobiles; track mobile.id) {
+      <tr>
+        <td>{{ mobile.id }}</td>
+        <td>{{ mobile.mobileName }}</td>
+        <td>{{ mobile.brand }}</td>
+        <td>{{ mobile.ram }} GB</td>
+        <td>{{ mobile.price | currency : "INR" : "symbol" : "1.0-0" }}</td>
+        <td>{{ mobile.externalStorage }} GB</td>
+        <td>
+          <button
+            (click)="updateMobile(mobile.id)"
+            class="icon-button-update"
+            title="update"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button
+            (click)="deleteMobile(mobile.id)"
+            class="icon-button"
+            title="Delete"
+          >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+        
+      </tr>
+      }
+      <tr class="add-row" style="background-color:rgba(188, 188, 188, 0.408)">
+        <td colspan="8" class="text-center">
+          <button
+            class="btn btn-outline-success"
+            title="Add New Mobile"
+            routerLink="/admin"
+          >
+            <i class="fas fa-plus"></i> Add New Mobile
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  }
+</div>
